@@ -15,18 +15,18 @@ rustup target add wasm32-unknown-unknown
 cargo install wasm-gc
 ```
 
+## Builds et lancements
 
 - Build release / target :
 
 ```
-cargo build --target wasm32-unknown-unknown -release 
-cd .\target\wasm32-unknown-unknown\release
-wasm-gc addition_wasm.wasm
+cargo build --target wasm32-unknown-unknown --release
+wasm-gc ./target/wasm32-unknown-unknown/release/addition_wasm.wasm
 ```
 
 Attention ici il faudra copier le fichier WASM à l'endroit où le serveur se lance pour le test
 ```
-cp .\target\wasm32-unknown-unknown\release\addition_wasm.wasm .\src\view\
+cp ./target/wasm32-unknown-unknown/release/addition_wasm.wasm ./src/view/
 ```
 
 Grâce à l'installation préalable, un micro serveur python est lancable *depuis le dossier html*
